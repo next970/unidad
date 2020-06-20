@@ -1,0 +1,41 @@
+<div class="container">
+<div class="row custom-row">
+<div class="row">
+  <div class="col-md-3">
+      <div class="form-group">
+      <label for="txtid">ID</label>
+      <input type="text" class="form-control" id="txtid" formControlName="id">
+      <div class="invalid-feeback">
+          <div *ngIf="error"><span style="color: red;">Valor incorrecto</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+      <div class="form-group"></div>
+      <label for="txtnombre">Nombre</label>
+      <input type="text" class="form-control" id="txtnombre" formControlName="name">
+  </div>
+  <div class="col-md-3">
+      <div class="form-group"></div>
+      <label >Genero</label>
+      <label for="hombre">Masculino</label>
+      <input type="radio" class="form-control" id="masculino" formControlName="masculino">
+      <label for="mujer">Femenino</label>
+      <input type="radio" class="form-control" id="femenino" formControlName="femenino">
+  </div>
+  <div class="col-md-3">
+      <div class="form-group"></div>
+      <label for="txtanio">Año de nacimiento</label>
+      <input type="text" class="form-control" id="txtanio" formControlName="anio">
+      <div class="invalid-feeback">
+          <div *ngIf="error"><span style="color: red;">incorrecto</span></div>
+      </div>
+  </div>
+</div>
+<div class="row m-t-30">
+  <div class="col-md-12 modal-footer">
+      <button type="submit" class="btn btn-primary btn-sm"><i class="mdi mdi-content-save"></i>Guardar</button>
+  </div>
+</div>
+</div>
+</div>

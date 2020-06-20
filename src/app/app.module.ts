@@ -8,6 +8,7 @@ import { SaludoComponent } from './componentes/saludo/saludo.component';
 import { SaludosComponent } from './tic/saludos/saludos.component';
 import { ValidacionComponent } from './formularios/validacion/validacion.component';
 import { FormAppComponent } from './formularios/form-app/form-app.component';
+import { AddAppComponent } from './formularios/add-app/add-app.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormAppComponent } from './formularios/form-app/form-app.component';
     SaludoComponent,
     SaludosComponent,
     ValidacionComponent,
-    FormAppComponent
+    FormAppComponent,
+    AddAppComponent
   ],
   imports: [
     BrowserModule,
