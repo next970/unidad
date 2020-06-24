@@ -3,15 +3,21 @@
 <br>
 <br>
 <!-- <add-app></add-app> -->
-<add-app></add-app>
+<!-- <add-app></add-app> -->
+<div class="container">
+<barss #mivariable [nombre]="name" (saludar)="onSaludar($event)"></barss>
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<p>
+    Validando... <span [ngClass]="valida(mivariable.nombrelista)">**************</span>
+    
+</p>
+</div>
+
+
+
+
 <!-- <form-app></form-app> -->
-<br>
+
 
 <!-- <ny-org-saludos></ny-org-saludos> -->

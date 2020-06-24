@@ -9,6 +9,7 @@ import { SaludosComponent } from './tic/saludos/saludos.component';
 import { ValidacionComponent } from './formularios/validacion/validacion.component';
 import { FormAppComponent } from './formularios/form-app/form-app.component';
 import { AddAppComponent } from './formularios/add-app/add-app.component';
+import { ProgressBarComponent } from './tic/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddAppComponent } from './formularios/add-app/add-app.component';
     SaludosComponent,
     ValidacionComponent,
     FormAppComponent,
-    AddAppComponent
+    AddAppComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
