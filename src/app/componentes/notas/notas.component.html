@@ -13,7 +13,7 @@
         <textarea id="text2" type="text" class="form-control" #descri required></textarea>
     </div>
     <br>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <div class="input-group is-invalid">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="validatedInputGroupSelect">Importancia</label>
@@ -25,12 +25,20 @@
             <option value="bg-danger">Muy importante</option>
           </select>
         </div>
+    
     </div>
+-->
     <div class="input-group-append">
-        <button class="btn btn-outline-primary" (click)='agregarNota(titulo.value, descri.value, impo.value)' type="button">Agregar</button>
+        <button class="btn btn-outline-primary" (click)='agregarNotass(titulo.value, descri.value)' type="button">Agregar</button>
+           
     </div>
+    <br>
+    <div>
+        <button class="btn btn-outline-danger" (click)='borrar()'> Eliminar todas las notas</button>
+    </div>
+    
 
 </div>
 <div class="card-columns">
-    <agregar class="animated fadeIn fast" [nota]="item " *ngFor="let item of nota"></agregar>
+    <agregar class="animated fadeIn fast" ></agregar>
 </div>

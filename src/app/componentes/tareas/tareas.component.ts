@@ -1,61 +1,29 @@
 import { Component } from "@angular/core";
 import { Model } from "./model";
+import { Tarea } from '../../clases/tareas.model';
+
+import { TareasService } from '../../localstorage/tareas.service';
 @Component({
   selector: 'tareas',
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.css']
 })
 export class TareasComponent {
-  tarea: Tarea[] = [];
+  nombreTarea= "";
+  tarea: Tarea;
    validar = true;
-  constructor() { }
-
-  agregarTarea( termino: string ){
-    if (termino.length > 0){
-      console.log(termino.length);
-      this.tarea.push({ index: (this.tarea.length + 1), nombre: termino, realizada: false,   deabilitar:""});
-      (document.getElementById('text') as HTMLInputElement).autofocus = true;
-      (document.getElementById('text') as HTMLInputElement).value = "";
-
-    }
-
-  }
+ constructor(public tareasService: TareasService) { }
+ 
 
 
-  cheked(index: number){
-  for ( let i = 0; i < this.tarea.length; i++ ){
-    let tarea = this.tarea[i];
-    if (tarea.index === index){
-      this.tarea[i].realizada = true;
-    }
-  }
+ 
+ agregarTarea( termino: string ){
+  this.tareasService.agregarTarea(termino) ;
+  this.nombreTarea= "";
 }
+
+
 borrar(){
-  this.tarea.splice(0, this.tarea.length);
+  this.tareasService.borrar();
 }
-hayActivos(){
-  for ( let i = 0; i < this.tarea.length; i++ ){
-    if (this.tarea[i].realizada){
-      return true;
-    }
-  }
-  return false;
-}
-borrarCompletados(){
-  for ( let i = this.tarea.length - 1; i >= 0; i-- ){
-    let tarea = this.tarea[i];
-    if (tarea.realizada){
-      this.tarea.splice(i , 1);
-    }
-  }
-  for ( let i = 0; i < this.tarea.length; i++ ){
-    this.tarea[i].index = i + 1;
-  }
-}
-}
-export interface Tarea{
-  nombre: string;
-  realizada: boolean;
-  index: number;
-  deabilitar: string;
 }

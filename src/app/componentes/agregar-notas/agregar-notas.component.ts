@@ -1,4 +1,6 @@
 import { Component, Input} from '@angular/core';
+import { NotasService } from '../../localstorage/notas.service';
+import { Nota } from 'src/app/clases/notas.model';
 
 @Component({
   selector: 'agregar',
@@ -6,9 +8,6 @@ import { Component, Input} from '@angular/core';
   styleUrls: ['./agregar-notas.component.css']
 })
 export class AgregarNotasComponent {
-
-  @Input() nota: any = {};
-  constructor() { }
-
-
+  nota: Nota[] = [];
+  constructor(public notaService: NotasService ) { }
 }

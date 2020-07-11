@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NotasService } from '../../localstorage/notas.service';
+import { Nota } from 'src/app/clases/notas.model';
 
 @Component({
   selector: 'notas',
@@ -8,24 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class NotasComponent {
 
   nota: Nota[] = [];
-
-  constructor() { }
-  agregarNota( tit: string, desc: string, imp: string ){
-    if (tit.length > 0 && desc.length > 0 && imp !== 'null' ){
-      this.nota.push({  titulo: tit, descripcion: desc,   importancia: imp, fecCre: new Date()});
-      (document.getElementById('text') as HTMLInputElement).autofocus = true;
-      (document.getElementById('text') as HTMLInputElement).value = "";
-      (document.getElementById('text2') as HTMLInputElement).value = "";
-      (document.getElementById('validatedInputGroupSelect') as HTMLInputElement).value = "null";
-    }
-
+  titulo="";
+  descripcion="";
+  opti="";
+  
+  constructor(public notasService: NotasService) { }
+  agregarNotass( tit: string, desc: string ){
+    if (tit.length > 0 && desc.length > 0){
+      this.notasService.crearNota(tit, desc, this.opti);
+      this.titulo="";
+      this.descripcion="";
+      this.opti="";
+      
+     }
   }
-
-
-}
-export interface Nota{
-  titulo: string;
-  descripcion: string;
-  fecCre: Date;
-  importancia: string;
+  borrar(){
+    this.notasService.borrarNotas();
+  }
 }
